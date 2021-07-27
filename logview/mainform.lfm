@@ -1,0 +1,127 @@
+object LogViewForm: TLogViewForm
+  Left = 509
+  Height = 474
+  Top = 114
+  Width = 681
+  Caption = 'Log View'
+  ClientHeight = 474
+  ClientWidth = 681
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.10.0'
+  object PanelFiles: TPanel
+    Left = 0
+    Height = 98
+    Top = 376
+    Width = 681
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 98
+    ClientWidth = 681
+    TabOrder = 0
+    object FilesList: TListView
+      Left = 0
+      Height = 98
+      Top = 0
+      Width = 681
+      Align = alClient
+      Columns = <      
+        item
+          Caption = 'File'
+          Width = 400
+        end      
+        item
+          Caption = 'Action'
+          Width = 100
+        end>
+      OwnerData = True
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnData = FilesListData
+    end
+  end
+  object PanelMessage: TPanel
+    Left = 0
+    Height = 123
+    Top = 248
+    Width = 681
+    Align = alBottom
+    ClientHeight = 123
+    ClientWidth = 681
+    TabOrder = 1
+    object LogMessage: TRichMemo
+      Left = 1
+      Height = 121
+      Top = 1
+      Width = 679
+      Align = alClient
+      HideSelection = False
+      Lines.Strings = (
+        'LogMessage'
+      )
+      TabOrder = 0
+      ZoomFactor = 1
+    end
+  end
+  object PanelLog: TPanel
+    Left = 0
+    Height = 219
+    Top = 24
+    Width = 681
+    Align = alClient
+    ClientHeight = 219
+    ClientWidth = 681
+    TabOrder = 2
+    object LogList: TListView
+      Left = 1
+      Height = 217
+      Top = 1
+      Width = 679
+      Align = alClient
+      Columns = <      
+        item
+          Caption = 'Hash'
+        end      
+        item
+          AutoSize = True
+          Caption = 'Message'
+          Width = 61
+        end>
+      HideSelection = False
+      OwnerData = True
+      RowSelect = True
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnData = LogListData
+      OnSelectItem = LogListSelectItem
+    end
+  end
+  object Splitter1: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 371
+    Width = 681
+    Align = alBottom
+    ResizeAnchor = akBottom
+  end
+  object Splitter2: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 243
+    Width = 681
+    Align = alBottom
+    ResizeAnchor = akBottom
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 24
+    Top = 0
+    Width = 681
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    TabOrder = 5
+  end
+end
